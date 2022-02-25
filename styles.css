@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popUpForm {
+    display: none;
+}
+#popUpFormBlackCard {
+    display: grid;
+    place-items: center;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+#myForm {
+    height: 20rem;
+    width: 20rem;
+    padding: 4px;
+    border-radius: .5rem;
+    border: 1px solid white;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255);
+    /* box-shadow:0px 0px 5px 0.4px #fff; */
+}
+#formHeading {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 7.5rem;
+}
+#closeBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    font-style: bold;
+    cursor: pointer;
+}
+input {
+    border: none;
+    height: 20px;
+    width: 200px;
+    padding: .3rem;
+    outline: none;
+    border-radius: .2rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+#msg {
+    color: red;
+    font-size: .8rem;
+}
+textarea {
+    width: 200px;
+    outline: none;
+    padding: .3rem;
+    border: none;
+    margin-top: .2rem;
+    border-radius: .2rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+#addBtn {
+    height: 30px;
+    width: 100px;
+    border-radius: .3rem;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    border: 1px solid #000;
+    background-color: transparent;
+}
+#addBtn:hover {
+    color: #fff;
+    background-color: royalblue;
+}
+
+#mainApp {
+    height: 450px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-inline: .5rem;
+    padding-block: .5rem;
+    border-radius: 1rem;
+    border: 5px solid rgba(0, 0, 0, 0.15);
+}
+
+#todoTasks {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-block: .8rem;
+    height: 400px;
+    overflow: auto;
+}
+#todoTasks::-webkit-scrollbar {
+    width: 0;
+}
+
+.taskCard {
+    padding: .3rem;
+    border-radius: .5rem;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+}
+#taskDate {
+    margin-top: 0.5rem;
+    float: right;
+    font-style: italic;
+    font-size: .8rem;
+}
+#heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+#actions {
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+    margin-top: .15rem;
+    cursor: pointer;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    border-radius: .35rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: .4rem;
+}
+#openBtn {
+    height: 20px;
+    width: 20px;
+    border-radius: .2rem;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 9);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- title tag -->
+		<title>ToDo | Task App</title>
+	<!-- end -->
+
+	<!-- meta tags -->
+		<meta charset="utf-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="discription" content="Learning the HTML, CSS, and the JavaScript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- end -->
+
+	<!-- stylesheet tag -->
+		<link rel="stylesheet" href="styles.css">
+	<!-- end -->
+
+	<!-- external tags -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/1931a0e897.js" crossorigin="anonymous"></script>
+	<!-- end -->
+
+	</head>
+	<body>
+
+	<!-- pop up form -->
+		<div id="popUpForm">
+			<div id="popUpFormBlackCard">
+				<form id="myForm">
+					<div id="formHeading">
+						<h3>Task</h3>
+						<button type="button" id="closeBtn" title="Close the Form" onclick="closeForm()">X</button>
+					</div>
+					<input type="text" placeholder="Title" id="titleInput">
+					<div id="msg"></div>
+					<input type="date" placeholder="Date" id="dateInput">
+					<textarea cols="30" rows="10" placeholder="Task here..." id="taskInput"></textarea>
+					<button type="submit" id="addBtn">Add</button>
+				</form>
+			</div>
+		</div>
+	<!-- end -->
+
+	<!-- task window -->
+		<div id="mainApp">
+			<h2>Tasks</h2>
+			<div id="todoTasks"></div>
+			<div id="footer">
+				<h4>Create your tasks...</h4>
+				<button id="openBtn" title="Add New Task" onclick="openForm()"><i class="fa-solid fa-plus"></i></button>
+			</div>
+		</div>
+	<!-- end -->
+	</body>
+	
+	<!-- sciript Tag -->
+	<script src="myScript.js"></script>
+	<!-- end -->
+</html>
+
