@@ -7,6 +7,7 @@ function closeForm() {
 }
 // end
 
+const data = []
 
 
 let myForm = document.getElementById('myForm');
@@ -22,7 +23,7 @@ myForm.addEventListener('submit', (e) => {
 })
 
 let formValidation = () => {
-    if(titleInput.value == "") {
+    if (titleInput.value == "") {
         msg.innerHTML = "Task cannot be blank!";
     }
     else {
@@ -31,8 +32,6 @@ let formValidation = () => {
         acceptData()
     }
 }
-
-let data = []
 
 let acceptData = () => {
     data.push({
@@ -43,15 +42,15 @@ let acceptData = () => {
 
     localStorage.setItem("data", JSON.stringify(data));
 
-    console.log( data );
+    console.log(data);
     createTasks()
 }
 
 
 let createTasks = () => {
     todoTasks.innerHTML = "";
-      data.map((x, y) => {
-      return (todoTasks.innerHTML += `
+    data.map((x, y) => {
+        return (todoTasks.innerHTML += `
     <div class="taskCard" id="${y}">
 		<div id="heading">
 			<h3 id="taskTitle">${x.title}</h3>
@@ -65,23 +64,23 @@ let createTasks = () => {
 	</div>
     `);
     })
-    
+
     resetForm()
 }
 
 
 let deleteTask = (e) => {
     let confirmation = confirm('Are you Sure!')
-    if(confirmation) {
-       e.parentElement.parentElement.parentElement.remove();
-       data.splice(e.parentElement.parentElement.parentElement.id, 1);
-       localStorage.setItem("data", JSON.stringify(data));
-       console.log(data);
+    if (confirmation) {
+        e.parentElement.parentElement.parentElement.remove();
+        data.splice(e.parentElement.parentElement.parentElement.id, 1);
+        localStorage.setItem("data", JSON.stringify(data));
+        console.log(data);
     } else {
-        console.log( 'no' );
+        console.log('no');
         return;
     }
-  }
+}
 
 let editTask = (e) => {
     document.getElementById('popUpForm').style.display = "block";
@@ -89,7 +88,7 @@ let editTask = (e) => {
     data.splice(e.parentElement.parentElement.parentElement.id, 1);
     localStorage.setItem("data", JSON.stringify(data));
 
-    let selectedTask =  e.parentElement.parentElement.parentElement
+    let selectedTask = e.parentElement.parentElement.parentElement
     let selectedTitle = e.parentElement.parentElement
 
     titleInput.value = selectedTitle.children[0].innerHTML
@@ -106,7 +105,7 @@ let resetForm = () => {
 
 
 (() => {
-    data = JSON.parse(localStorage.getItem("data"));
+    let data = JSON.parse(localStorage.getItem("data"));
     createTasks();
     console.log(data);
 })();
